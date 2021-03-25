@@ -1,6 +1,6 @@
 const { Model, DataTypes } = require('sequelize');
 
-const sequelize = require('../config/connection.js');
+const sequelize = require('../config/connection');
 
 class Character extends Model {}
 
@@ -20,7 +20,7 @@ Character.init (
             type: DataTypes.INTEGER,
             allowNull: false
         },
-        cpnstitution: {
+        constitution: {
             type: DataTypes.INTEGER,
             allowNull: false
         },

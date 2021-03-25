@@ -1,5 +1,5 @@
 {
-  "name": "DandD_tracker",
+  "name": "dandd_tracker",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -25,6 +25,7 @@
     "mysql2": "^2.2.5",
     "passport": "^0.4.1",
     "passport-google-oauth20": "^2.0.0",
+    "express-handlebars": "^5.2.1",
     "sequelize": "^6.6.2",
     "sql": "^0.78.0"
   },
