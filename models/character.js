@@ -20,7 +20,7 @@ Character.init (
             type: DataTypes.INTEGER,
             allowNull: false
         },
-        cpnstitution: {
+        constitution: {
             type: DataTypes.INTEGER,
             allowNull: false
         },
