@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { User, Character, Campaign } = require('../../models');
+const { Campaign, Character, User } = require('../../models');
 
 // Get all users
 router.get('/', (req, res) => {
@@ -66,3 +66,85 @@ router.post('/', (req, res) => {
         res.status(500).json(err);
     });
 });
+
+// User login
+router.post('/login', (req, res) => {
+    User.findOne({
+        where: {
+            user_name: req.body.user_name
+        }
+    })
+    .then(userData => {
+        if (!userData) {
+            res.json(400).json({ message: 'That username or password is incorrect' });
+            return;
+        };
+
+        const validPassword = userData.passwordConfirm(req.body.password);
+
+        if (!validPassword) {
+            res.status(400).json({ message: "That username or password is incorrect" });
+            return;
+        }
+        req.session.save(() => {
+            req.session.user_id = userData.id;
+            req.session.user_name = userData.user_name;
+            req.session.loggedIn = true;
+
+            // Add message saying user is logged in?
+        });
+    });
+});
+
+// User logout
+router.post('/logout', (req, res) => {
+    if (req.session.loggedIn) {
+        req.session.destroy(() => {
+            res.status(204).end();
+        });
+    } else {
+        res.status(404).end();
+    }
+});
+
+// Update a user
+router.put('/:id', (req, res) => {
+    User.update(req.body, {
+        individualHooks: true,
+        where: {
+            id: req.params.id
+        }
+    })
+    .then(userData => {
+        if (!userData) {
+            res.status(400).json({ message: 'No user found with that ID' });
+        }
+        res.json(userData);
+    })
+    .catch(err => {
+        console.log(err);
+        res.status(500).json(err);
+    });
+});
+
+// Delete a user
+router.delete('/:id', (req, res) => {
+    User.destroy({
+        where: {
+            id: req.params.id
+        }
+    })
+    .then(userData => {
+        if (!userData) {
+            res.status(404).json({ message: 'No user found with that ID' });
+            return;
+        }
+        res.json(userData);
+    })
+    .catch(err => {
+        console.log(err);
+        res.status(500).json(err);
+    });
+});
+
+module.exports = router;
