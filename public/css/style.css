@@ -1,0 +1,26 @@
+@font-face {
+    font-family: "draconis";
+    src: url("draconis-jrw6b-webfont.woff") format("woff");
+}
+
+body.background {
+    background-image: url('../images/background.svg');
+}
+header {
+    text-align: center;
+    font-family: draconis;
+    color: #fff;
+    font-size: xx-large;
+    text-shadow: 4px 4px  #C2AB9A;
+
+}
+
+.login-form {
+    flex-direction: column;
+
+    text-align: center;
+}
+
+input {
+    
+}
