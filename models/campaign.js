@@ -1,6 +1,7 @@
 const { Model, DataTypes } = require('sequelize')
-
+const User = require('./User')
 const sequelize = require('../config/connection')
+const Character = require('./Character')
 
 class Campaign extends Model {}
 
@@ -12,20 +13,28 @@ Campaign.init(
       primaryKey: true,
       autoIncrement: true
     },
-    campaign_name: {
+    campaignName: {
       type: DataTypes.STRING,
       allowNull: false
     },
-    user_id: {
+    userId: {
       type: DataTypes.INTEGER,
       references: {
-        model: 'user',
+        model: User,
         key: 'id'
       }
     }
+    // characterId: {
+    //   type: DataTypes.INTEGER,
+    //   references: {
+    //     model: Character,
+    //     key: 'id'
+    //   }
+    // }
   },
   {
     sequelize,
+    timestamps: false,
     freezeTableName: true,
     underscored: true,
     modelName: 'campaign'

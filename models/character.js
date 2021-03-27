@@ -1,5 +1,6 @@
 const { Model, DataTypes } = require('sequelize')
-
+const User = require('./User')
+const Campaign = require('./Campaign')
 const sequelize = require('../config/connection')
 
 class Character extends Model {}
@@ -84,34 +85,28 @@ Character.init(
       type: DataTypes.STRING,
       allowNull: false
     },
-    user_id: {
+    userId: {
       type: DataTypes.INTEGER,
       references: {
-        model: 'user',
+        model: User,
         key: 'id'
       }
     },
-    campaign_id: {
+    campaignId: {
       type: DataTypes.INTEGER,
       references: {
-        model: 'campaign',
+        model: Campaign,
         key: 'id'
-      }
-    },
-    role: {
-      type: DataTypes.STRING,
-      references: {
-        model: 'user',
-        key: 'role'
       }
     }
   },
   {
     sequelize,
+    timestamps: false,
     freezeTableName: true,
     underscored: true,
     modelName: 'character'
   }
-);
+)
 
 module.exports = Character

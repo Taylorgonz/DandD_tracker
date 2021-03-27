@@ -4,10 +4,11 @@ const exphbs = require('express-handlebars');
 const routes = require('./controllers');
 // const models = require('./models')
 // import sequelize connection
-const sequelize = require('./config/connection');
-const passport = require('passport');
-const cookieSession = require('cookie-session');
-require('./config/passport');
+const sequelize = require('./config/connection')
+const passport = require('passport')
+const cookieSession = require('cookie-session')
+require('./config/passport')
+const models = require('./models')
 
 const app = express();
 const PORT = process.env.PORT || 3001;
@@ -25,13 +26,18 @@ app.use(cookieSession({
   keys: ['key1', 'key2']
 }));
 // configure passport
+<<<<<<< HEAD
 app.use(passport.initialize());
 app.use(passport.session());
+=======
+app.use(passport.initialize())
+app.use(passport.session())
+>>>>>>> e87ae0bab16b16fb536f110c8f9806934dd61d2d
 //
 
 app.use(routes);
 
 // sync sequelize models to the database, then turn on the server
-sequelize.sync({ force: false }).then(() => {
+sequelize.sync({ force: false, logging: console.log }).then(() => {
   app.listen(PORT, () => console.log('Now listening'))
 });
