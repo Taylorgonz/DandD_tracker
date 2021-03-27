@@ -26,4 +26,8 @@ router.get('/auth/google/callback', passport.authenticate('google', { failureRed
 )
 //
 
-module.exports = router
+router.get('/signup', (req, res) => {
+    res.render('signup');
+})
+
+module.exports = router;
