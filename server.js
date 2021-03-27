@@ -26,13 +26,8 @@ app.use(cookieSession({
   keys: ['key1', 'key2']
 }));
 // configure passport
-<<<<<<< HEAD
-app.use(passport.initialize());
-app.use(passport.session());
-=======
 app.use(passport.initialize())
 app.use(passport.session())
->>>>>>> e87ae0bab16b16fb536f110c8f9806934dd61d2d
 //
 
 app.use(routes);
