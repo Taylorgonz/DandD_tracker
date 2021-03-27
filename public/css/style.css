@@ -56,6 +56,15 @@ h2.sub-header {
     margin-left: auto;
     margin-right: auto;
     border: 2px solid #C2AB9A;
+    text-align: center;
+    
+}
+
+.username::placeholder,
+.password::placeholder {
+    opacity: 50%;
+    font-family: Calibri;
+    font-size: large;
 }
 
 button.login-button {
@@ -63,12 +72,13 @@ button.login-button {
     margin-top: 20px;
     margin-left: auto;
     margin-right: auto;
-    padding: 5px;
+    padding: 10px;
     color: #fff;
     background-color: #C2AB9A;
     text-decoration: none;
     border: none;
     border-radius: 5px;
+    font-family: boldkei;
 }
 
 button.login-button:hover {
@@ -78,5 +88,9 @@ color: #C2AB9A;
 
 .signup-button {
     color: #C2AB9A;
-    margin-top: 20px;
+    margin-top: 10px;
+}
+.signup-button:hover {
+    color: #eee;
+    
 }
