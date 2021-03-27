@@ -7,6 +7,7 @@ const sequelize = require('./config/connection')
 const passport = require('passport')
 const cookieSession = require('cookie-session')
 require('./config/passport')
+const models = require('./models')
 
 const app = express()
 const PORT = process.env.PORT || 3001
@@ -26,11 +27,11 @@ app.use(cookieSession({
 // configure passport
 app.use(passport.initialize())
 app.use(passport.session())
-// 
+//
 
 app.use(routes)
 
 // sync sequelize models to the database, then turn on the server
-sequelize.sync({ force: false }).then(() => {
+sequelize.sync({ force: false, logging: console.log }).then(() => {
   app.listen(PORT, () => console.log('Now listening'))
 })
