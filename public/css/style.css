@@ -6,14 +6,17 @@
 }
 
 body.background {
-    background-image: url('../images/background.svg');
+    background-image: url('../images/background.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+
 }
 h1.main-header {
     text-align: center;
     font-family: draconis;
     color: #fff;
     font-size: 65px;
-    text-shadow: 4px 4px  #C2AB9A;
+    text-shadow: 4px 4px  #879F7C;
     margin-bottom: 0px;
 
 }
@@ -24,6 +27,7 @@ h2.sub-header {
     margin-top: 5px;
     margin-bottom: 50px;
     font-family: boldkei;
+    text-decoration: underline;
 }
 
 .login-form {
@@ -41,10 +45,19 @@ h2.sub-header {
     color: #fff;
     padding-top: 10px;
     font-family: boldkei;
-    text-shadow: 3px 3px #C2AB9A;
+    text-shadow: 3px 3px #879F7C;
     font-size: xx-large;
-    margin-bottom: 30px;
+    margin-bottom: 10px;
 
+}
+
+.login-subheader {
+    margin-top: 0px;
+    margin-bottom: 0px;
+    font-family: Calibri;
+    color: #879F7C;
+    letter-spacing: 3px;
+    font-size: large;
 }
 .username,
 .password {
@@ -55,28 +68,45 @@ h2.sub-header {
     width: 200px;
     margin-left: auto;
     margin-right: auto;
-    border: 2px solid #C2AB9A;
+    border: 2px solid #879F7C;
+    text-align: center;
+    
+}
+
+.username::placeholder,
+.password::placeholder {
+    opacity: 50%;
+    font-family: Calibri;
+    font-size: large;
 }
 
 button.login-button {
-    width: 60px;
+    width: 70px;
     margin-top: 20px;
     margin-left: auto;
     margin-right: auto;
-    padding: 5px;
+    padding-top: 10px;
+    padding-bottom: 10px;
     color: #fff;
-    background-color: #C2AB9A;
+    background-color: #879F7C;
     text-decoration: none;
     border: none;
     border-radius: 5px;
+    font-family: boldkei;
+    word-wrap: normal;
 }
 
 button.login-button:hover {
 background-color: #fff;
-color: #C2AB9A;
+color: #879F7C;
 }
 
 .signup-button {
-    color: #C2AB9A;
-    margin-top: 20px;
+    color: #879F7C;
+    margin-top: 10px;
+    font-family: Calibri;
+}
+.signup-button:hover {
+    color: #eee;
+    
 }
