@@ -112,6 +112,6 @@ Character.init(
     underscored: true,
     modelName: 'character'
   }
-)
+);
 
 module.exports = Character
