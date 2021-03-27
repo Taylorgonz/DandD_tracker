@@ -101,6 +101,13 @@ Character.init (
               model: "campaign",
               key: "id"
             }
+        },
+        role: {
+            type: DataTypes.STRING,
+           references: {
+               model: "user",
+               key: "role"
+           } 
         }
     },
     {
