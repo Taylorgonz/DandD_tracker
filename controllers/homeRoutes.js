@@ -5,13 +5,14 @@ router.get('/login', (req, res) => {
   res.render('login')
 })
 
-module.exports = router;
-
 router.get('/signup', (req, res) => {
-    res.render('signup');
+  res.render('signup')
 })
 
-module.exports = router;
+router.get('/character', (req, res) => {
+  res.render('character')
+})
+
 // middleware to check if user is logged in
 const checkUserLoggedIn = (req, res, next) => {
   req.user ? next() : res.sendStatus(401)
@@ -31,6 +32,6 @@ router.get('/auth/google/callback', passport.authenticate('google', { failureRed
     res.redirect('/profile')
   }
 )
-// 
+//
 
 module.exports = router
