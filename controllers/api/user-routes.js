@@ -45,8 +45,8 @@ router.get('/:id', (req, res) => {
                     'items',
                     'flaws',
                     'notes',
-                    'user_id',
-                    'campaign_id'
+                    'userId',
+                    'campaignId'
                 ]
             },
             {
@@ -54,7 +54,7 @@ router.get('/:id', (req, res) => {
                 attributes: [
                     'id', 
                     'campaign_name', 
-                    'user_id'
+                    'userId'
                 ]
             }
         ]
@@ -76,7 +76,8 @@ router.get('/:id', (req, res) => {
 router.post('/', (req, res) => {
     User.create({
         user_name: req.body.user_name,
-        password: req.body.password
+        password: req.body.password,
+        role: req.body.role
     })
         .then(userData => {
             req.session.save(() => {
@@ -84,8 +85,8 @@ router.post('/', (req, res) => {
                 req.session.user_name = userData.user_name;
                 req.session.loggedIn = true;
 
-                res.json(userData);
             });
+            res.json(userData);
         })
         .catch(err => {
             console.log(err);
