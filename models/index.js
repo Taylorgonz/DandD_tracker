@@ -1,22 +1,38 @@
-const Campaign = require("./campaign");
-const Character = require("./character");
-const User = require("./user");
+const Campaign = require('./Campaign')
+const Character = require('./Character')
+const User = require('./User')
+const UserCampaign = require('./UserCampaign')
 
-Campaign.hasMany(User, {
-    foreignKey: "user_id",
-});
+Campaign.belongsToMany(User, {
+  through: {
+    model: UserCampaign
+  },
+  as: 'campaign_users'
+})
+User.belongsToMany(Campaign, {
+  through: {
+    model: UserCampaign
+  },
+  as: 'user_campaigns'
+})
 
-Character.hasOne(Campaign, {
-    foreignKey: "campaign_id",
-});
+Character.belongsTo(Campaign, {
+  foreignKey: 'campaignId'
+})
+Campaign.hasMany(Character, {
+  foreignKey: 'campaignId'
+})
 
-Character.hasOne(User, {
-    foreignKey: "user_id",
-});
+User.hasMany(Character, {
+  foreignKey: 'userId'
+})
+Character.belongsTo(User, {
+  foreignKey: 'userId'
+})
 
-
-module.exports= {
-    Campaign,
-    Character,
-    User,
-};
+module.exports = {
+  Campaign,
+  Character,
+  User,
+  UserCampaign
+}
