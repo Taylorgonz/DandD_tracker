@@ -1,7 +1,7 @@
 <div class="character-form">
     <form>
         <h2 class='charFormHeader'>Character Builder</h2>
-        <div class="character-name-div">
+        <div class="character-name">
             <label for="charName" class="characterLabel">Character Name</label>
             <input type="text" id="charName" class='character-input'>
         </div>
@@ -12,7 +12,25 @@
             <label for="charClass" class="characterLabel">Class</label>
             <select id="classList" name="classList" class="classSelector"> 
             </select>
-              
+        </div>
+        <div class="traits">
+            <label for="charTraits" class="traitsLabel">Traits</label>
+            <textarea type="text" id="charTraits" rows="4" class='character-input'></textarea>
+        </div>
+        <div class="attributes">
+            <label for="charRace" class="attributesLabel">Strength</label>
+            <input type="number" id="charStrength" class='attribute-input'>
+
+            <label for="charRace" class="attributesLabel">Dexterity</label>
+            <input type="number" id="charDexterity" class='attribute-input'>
+            <label for="charRace" class="attributesLabel">Constitution</label>
+            <input type="number" id="charConstitution" class='attribute-input'>
+            <label for="charRace" class="attributesLabel">Intelligence</label>
+            <input type="number" id="charIntelligence" class='attribute-input'>
+            <label for="charRace" class="attributesLabel">Wisdom</label>
+            <input type="number" id="charWisdom" class='attribute-input'>
+            <label for="charRace" class="attributesLabel">Charisma</label>
+            <input type="number" id="charCharisma" class='attribute-input'>
         </div>
     </form>
 </div>

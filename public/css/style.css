@@ -7,9 +7,6 @@
 
 body.background {
     background-image: url('../images/background.jpg');
-    background-repeat: no-repeat;
-    background-size: cover;
-
 }
 h1.main-header {
     text-align: center;
@@ -124,42 +121,94 @@ color: #879F7C;
     margin-right: auto;
     width: 80%;
     border-radius: 25px;
-    color: #879F7C;
+    color: #5b6d53;
 }
 .charFormHeader {
     font-family: boldkei;
     color: #fff;
-    text-shadow: 2px 2px #879F7C;
+    text-shadow: 3px 2px #879F7C;
 
 }
 
-label.characterLabel {
+label.characterLabel,
+label.attributesLabel {
     font-family: Calibri;
     font-size: large;
-    display: inline-block;
+}
+label.traitsLabel {
+    font-family: Calibri;
+    font-size: large;
+    display: block;
 }
 
+
+
 input.character-input {
+
     width: 200px;
     margin-left: auto;
     margin-right: auto;
-    border: 2px solid #879F7C;
+    border: 2px solid #5b6d53;
     border-radius: 10px;
-    color:#879F7C;
+    color:#5b6d53;
+    font-family: Calibri;
+    text-align: center;
+    font-size: large;
+    margin-bottom: 5px;
+}
+div.traits {
+    display: block;
+
+}
+textarea.character-input {
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+    border: 2px solid #5b6d53;
+    border-radius: 10px;
+    color:#5b6d53;
+    font-family: Calibri;
+    text-align: center;
+    font-size: medium;
+    margin-bottom: 5px;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input.attribute-input {
+    width: 50px;
+    margin-left: auto;
+    margin-right: auto;
+    border: 2px solid #5b6d53;
+    border-radius: 10px;
+    color:#5b6d53;
     font-family: Calibri;
     text-align: center;
     font-size: large;
     margin-bottom: 5px;
 }
 select.classSelector {
+    /* display: block; */
     width: 200px;
     margin-left: auto;
     margin-right: auto;
-    border: 2px solid #879F7C;
+    border: 2px solid #5b6d53;
     border-radius: 10px;
-    color:#879F7C;
+    color:#5b6d53;
     font-family: Calibri;
     text-align: center;
     font-size: large;
     margin-bottom: 5px;
 }
+
+@media screen and (max-width: 400px) {
+
+    body.background {
+        background-size: 105em;
+        background-position: center;
+    }
+  }
