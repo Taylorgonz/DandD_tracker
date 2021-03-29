@@ -5,6 +5,14 @@ router.get('/login', (req, res) => {
   res.render('login')
 })
 
+router.get('/signup', (req, res) => {
+  res.render('signup')
+})
+
+router.get('/character', (req, res) => {
+  res.render('character')
+})
+
 // middleware to check if user is logged in
 const checkUserLoggedIn = (req, res, next) => {
   req.user ? next() : res.sendStatus(401)

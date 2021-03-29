@@ -7,9 +7,6 @@
 
 body.background {
     background-image: url('../images/background.jpg');
-    background-repeat: no-repeat;
-    background-size: cover;
-
 }
 h1.main-header {
     text-align: center;
@@ -29,6 +26,9 @@ h2.sub-header {
     font-family: boldkei;
     text-decoration: underline;
 }
+
+/* login/signup page styling */
+/* ------------------------------------------------- */
 
 .login-form {
     flex-direction: column;
@@ -92,7 +92,7 @@ button.login-button {
     text-decoration: none;
     border: none;
     border-radius: 5px;
-    font-family: boldkei;
+    font-family: Calibri;
     word-wrap: normal;
 }
 
@@ -110,3 +110,125 @@ color: #879F7C;
     color: #eee;
     
 }
+
+/* character page styling */
+/* ------------------------------------------------------- */
+.character-form {
+    text-align: center;
+    background: rgb(255, 255, 255, 0.7);
+    padding: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%;
+    border-radius: 25px;
+    color: #5b6d53;
+}
+.charFormHeader {
+    font-family: boldkei;
+    color: #fff;
+    text-shadow: 3px 2px #879F7C;
+
+}
+
+label.characterLabel,
+label.attributesLabel {
+    font-family: Calibri;
+    font-size: large;
+}
+label.traitsLabel {
+    font-family: Calibri;
+    font-size: large;
+    display: block;
+}
+
+
+
+input.character-input {
+
+    width: 200px;
+    margin-left: auto;
+    margin-right: auto;
+    border: 2px solid #5b6d53;
+    border-radius: 10px;
+    color:#5b6d53;
+    font-family: Calibri;
+    text-align: center;
+    font-size: large;
+    margin-bottom: 5px;
+}
+div.traits {
+    display: block;
+
+}
+textarea.character-input {
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    border: 2px solid #5b6d53;
+    border-radius: 10px;
+    color:#5b6d53;
+    font-family: Calibri;
+    text-align: center;
+    font-size: medium;
+    margin-bottom: 5px;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input.attribute-input {
+    width: 50px;
+    margin-left: auto;
+    margin-right: auto;
+    border: 2px solid #5b6d53;
+    border-radius: 10px;
+    color:#5b6d53;
+    font-family: Calibri;
+    text-align: center;
+    font-size: large;
+    margin-bottom: 5px;
+}
+select.classSelector {
+    /* display: block; */
+    width: 200px;
+    margin-left: auto;
+    margin-right: auto;
+    border: 2px solid #5b6d53;
+    border-radius: 10px;
+    color:#5b6d53;
+    font-family: Calibri;
+    text-align: center;
+    font-size: large;
+    margin-bottom: 5px;
+}
+button.character-submit-button {
+    width: 70px;
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    color: #fff;
+    background-color: #5b6d53;
+    text-decoration: none;
+    border: none;
+    border-radius: 5px;
+    font-family: Calibri;
+    word-wrap: normal;
+}
+
+button.character-submit-button:hover {
+background-color: #fff;
+color: #5b6d53;
+}
+
+@media screen and (max-width: 400px) {
+
+    /* body.background {
+        background-size: 105em;
+        background-position: center;
+    } */
+  }
