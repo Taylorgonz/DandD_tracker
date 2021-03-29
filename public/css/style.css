@@ -92,7 +92,7 @@ button.login-button {
     text-decoration: none;
     border: none;
     border-radius: 5px;
-    font-family: boldkei;
+    font-family: Calibri;
     word-wrap: normal;
 }
 
@@ -161,7 +161,7 @@ div.traits {
 
 }
 textarea.character-input {
-    width: 60%;
+    width: 50%;
     margin-left: auto;
     margin-right: auto;
     border: 2px solid #5b6d53;
@@ -204,11 +204,31 @@ select.classSelector {
     font-size: large;
     margin-bottom: 5px;
 }
+button.character-submit-button {
+    width: 70px;
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    color: #fff;
+    background-color: #5b6d53;
+    text-decoration: none;
+    border: none;
+    border-radius: 5px;
+    font-family: Calibri;
+    word-wrap: normal;
+}
+
+button.character-submit-button:hover {
+background-color: #fff;
+color: #5b6d53;
+}
 
 @media screen and (max-width: 400px) {
 
-    body.background {
+    /* body.background {
         background-size: 105em;
         background-position: center;
-    }
+    } */
   }
