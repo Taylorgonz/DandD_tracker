@@ -9,8 +9,8 @@ router.get('/signup', (req, res) => {
   res.render('signup')
 })
 
-router.get('/character', (req, res) => {
-  res.render('character')
+router.get('/character-builder', (req, res) => {
+  res.render('character-buider')
 })
 
 // middleware to check if user is logged in
