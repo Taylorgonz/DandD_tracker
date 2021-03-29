@@ -1,5 +1,6 @@
 const router = require('express').Router()
 const passport = require('passport')
+const Campaign = require('../models/campaign')
 
 router.get('/login', (req, res) => {
   res.render('login')
@@ -9,8 +10,19 @@ router.get('/signup', (req, res) => {
   res.render('signup')
 })
 
-router.get('/character-builder', (req, res) => {
-  res.render('character-buider')
+router.get('/character-builder', async (req, res) => {
+  try {
+    const campaigns = await Campaign.findAll({
+      raw: true
+    })
+
+    res.render('character-builder', { 
+      campaigns
+    });
+  } catch(err) {
+    res.status(500).json(err);
+  }
+  
 })
 
 // middleware to check if user is logged in

@@ -46,6 +46,14 @@
             <label for="charNotes" class="traitsLabel">Notes</label>
             <textarea type="text" id="charNotes" rows="4" class='character-input'></textarea>
         </div>
+        <div> 
+            <label for="campaignSelector" class="characterLabel">Campaign Selector</label>
+            <select id="classList" name="campaignSelector" class="classSelector">
+                {{#each campaigns as |campaign| }}
+                <option value="{{ campaign.id }}"> {{ campaign.campaignName }}</option>
+                {{/each}}
+            </select>
+        </div>
         <button class='character-submit-button'> Submit </button>
     </form>
 </div>
