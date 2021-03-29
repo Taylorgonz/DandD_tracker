@@ -13,9 +13,10 @@ if (process.env.JAWSDB_URL) {
     {
       host: process.env.DB_HOST,
       dialect: 'mysql',
+      dialectOptions: {
+        decimalNumbers: true,
+      },
       port: 3306
-    }
-  )
-}
-
-module.exports = sequelize
+    });
+  }
+module.exports = sequelize;

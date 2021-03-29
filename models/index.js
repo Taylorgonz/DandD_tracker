@@ -17,17 +17,17 @@ User.belongsToMany(Campaign, {
 })
 
 Character.belongsTo(Campaign, {
-  foreignKey: 'campaign_id'
+  foreignKey: 'campaignId'
 })
 Campaign.hasMany(Character, {
-  foreignKey: 'campaign_id'
+  foreignKey: 'campaignId'
 })
 
 User.hasMany(Character, {
-  foreignKey: 'user_id'
+  foreignKey: 'userId'
 })
 Character.belongsTo(User, {
-  foreignKey: 'user_id'
+  foreignKey: 'userId'
 })
 
 module.exports = {
