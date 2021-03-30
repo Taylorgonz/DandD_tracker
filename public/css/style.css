@@ -225,6 +225,26 @@ background-color: #fff;
 color: #5b6d53;
 }
 
+/* profile page */
+/* ------------------------------------------------------------- */
+
+
+.profile-page {
+    text-align: center;
+    background: rgb(255, 255, 255, 0.7);
+    padding: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%;
+    border-radius: 25px;
+    color: #5b6d53;
+}
+h2.userName {
+    font-family: boldkei;
+    color: #fff;
+    text-shadow: 3px 2px #879F7C;
+}
+
 @media screen and (max-width: 400px) {
 
     /* body.background {
