@@ -1,0 +1,51 @@
+<div class="character-form">
+    <form>
+        <h2 class='charFormHeader'>Character Builder</h2>
+        <div class="character-name">
+            <label for="charName" class="characterLabel">Character Name</label>
+            <input type="text" id="charName" class='character-input'>
+        </div>
+        <div class='charRaceClass'>
+            <label for="charRace" class="characterLabel">Race</label>
+            <input type="text" id="charRace" class='character-input'>
+
+            <label for="charClass" class="characterLabel">Class</label>
+            <select id="classList" name="classList" class="classSelector">
+            </select>
+        </div>
+        <div class="attributes">
+            <label for="charStrength" class="attributesLabel">Strength</label>
+            <input type="number" id="charStrength" class='attribute-input'>
+            <label for="charDexterity" class="attributesLabel">Dexterity</label>
+            <input type="number" id="charDexterity" class='attribute-input'>
+            <label for="charConstitution" class="attributesLabel">Constitution</label>
+            <input type="number" id="charConstitution" class='attribute-input'>
+            
+        </div>
+        <div>
+            <label for="charIntelligence" class="attributesLabel">Intelligence</label>
+            <input type="number" id="charIntelligence" class='attribute-input'>
+            <label for="charWisdom" class="attributesLabel">Wisdom</label>
+            <input type="number" id="charWisdom" class='attribute-input'>
+            <label for="charCharisma" class="attributesLabel">Charisma</label>
+            <input type="number" id="charCharisma" class='attribute-input'>
+        </div>
+        <div class="armorSpeed">
+            <label for="charArmor" class="attributesLabel">armor</label>
+            <input type="number" id="charArmor" class='attribute-input'>
+            <label for="charArmor" class="attributesLabel">speed</label>
+            <input type="number" id="charArmor" class='attribute-input'>
+        </div>
+        <div> 
+            <label for="charTraits" class="traitsLabel">Traits</label>
+            <textarea type="text" id="charTraits" rows="4" class='character-input'></textarea>
+            <label for="charItems" class="traitsLabel">Items</label>
+            <textarea type="text" id="charItems" rows="4" class='character-input'></textarea>
+            <label for="charNotes" class="traitsLabel">Flaws</label>
+            <textarea type="text" id="charNotes" rows="4" class='character-input'></textarea>
+            <label for="charNotes" class="traitsLabel">Notes</label>
+            <textarea type="text" id="charNotes" rows="4" class='character-input'></textarea>
+        </div>
+        <button class='character-submit-button'> Submit </button>
+    </form>
+</div>
