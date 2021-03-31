@@ -3,7 +3,7 @@ const User = require('./User')
 const Campaign = require('./Campaign')
 const sequelize = require('../config/connection')
 
-class Character extends Model {}
+class Character extends Model { }
 
 Character.init(
   {
@@ -97,13 +97,14 @@ Character.init(
       references: {
         model: Campaign,
         key: 'id'
-      },
+      }
+    },
     role: {
       type: DataTypes.STRING,
       references: {
-         model: "user",
-         key: "role"
-      } 
+        model: 'user',
+        key: 'role'
+      }
     }
   },
   {
