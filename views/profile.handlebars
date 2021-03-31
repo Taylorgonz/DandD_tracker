@@ -1,6 +1,9 @@
 <div class='profile-page'>
     <h2 class="userName profileHeader"> {{user.user_name}}</h2>
 </div>
+<div class='charCamp'>
+    <h2 class='profileHeader'><a class='createCharBtn'href='/character-builder'>Create New Character</a></h2>
+</div>
 
 <div class='campaign-display'>
     <div class='campaign-selector'>
@@ -8,13 +11,14 @@
             <h2 class='profileHeader'>
                 Campaigns
             </h2>
-            <div>
+            <div class='campaign=options'>
                 {{#each campaigns as |campaign| }}
-                <h3 class="campaign-list"> {{campaign.campaign_name}} </h3>
+                <h3 class="campaign-list" value="{{user.id}}"> {{campaign.campaign_name}} </h3>
                 {{/each}}
             </div>
         </div>
     </div>
+    
     <div class='profile-campaigns'>
         <div class='character-info'>
             <h2 class='profileHeader'>Character
@@ -59,6 +63,10 @@
                 </div>
                 <div class="charInfoAttr">
                     <div class="charInfoBlock">
+                        <label class='charInfoLabel'>ITEMS</label>
+                        <h3 class="charInfo">{{characters.items}}</h3>
+                    </div>
+                    <div class="charInfoBlock">
                         <label class='charInfoLabel'>TRAITS</label>
                         <h3 class="charInfo">{{characters.traits}}</h3>
                     </div>
@@ -66,6 +74,13 @@
                         <label class='charInfoLabel'>FLAWS</label>
                         <h3 class='charInfo'> {{characters.flaws}}</h3>
                     </div>
+                </div>
+                <div class="charInfoAttr">
+                    
+                    <div class="charInfoBlock">
+                        <label class='charInfoLabel'>NOTES</label>
+                        <h3 class='charInfo'> {{characters.notes}}</h3>
+                    </div>
+                </div>
         </div>
     </div>
-</div>

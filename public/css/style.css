@@ -17,7 +17,7 @@ h1.main-header {
     font-family: draconis;
     color: #fff;
     font-size: 65px;
-    text-shadow: 4px 4px  #879F7C;
+    text-shadow: 4px 4px  #5b6d53 ;
     margin-bottom: 0px;
 
 }
@@ -50,7 +50,7 @@ h2.sub-header {
     color: #fff;
     padding-top: 10px;
     font-family: boldkei;
-    text-shadow: 3px 3px #879F7C;
+    text-shadow: 3px 3px #5b6d53 ;
     font-size: xx-large;
     margin-bottom: 10px;
 
@@ -60,7 +60,7 @@ h2.sub-header {
     margin-top: 0px;
     margin-bottom: 0px;
     font-family: Calibri;
-    color: #879F7C;
+    color: #5b6d53 ;
     letter-spacing: 3px;
     font-size: large;
 }
@@ -73,7 +73,7 @@ h2.sub-header {
     width: 200px;
     margin-left: auto;
     margin-right: auto;
-    border: 2px solid #879F7C;
+    border: 2px solid #5b6d53 ;
     text-align: center;
     
 }
@@ -93,7 +93,7 @@ button.login-button {
     padding-top: 10px;
     padding-bottom: 10px;
     color: #fff;
-    background-color: #879F7C;
+    background-color: #5b6d53 ;
     text-decoration: none;
     border: none;
     border-radius: 5px;
@@ -103,11 +103,11 @@ button.login-button {
 
 button.login-button:hover {
 background-color: #fff;
-color: #879F7C;
+color: #5b6d53 ;
 }
 
 .signup-button {
-    color: #879F7C;
+    color: #5b6d53 ;
     margin-top: 10px;
     font-family: Calibri;
 }
@@ -131,7 +131,7 @@ color: #879F7C;
 .charFormHeader {
     font-family: boldkei;
     color: #fff;
-    text-shadow: 3px 2px #879F7C;
+    text-shadow: 3px 2px #5b6d53 ;
 
 }
 
@@ -251,8 +251,25 @@ color: #5b6d53;
 h2.profileHeader {
     font-family: boldkei;
     color: #fff;
-    text-shadow: 3px 2px #879F7C;
+    text-shadow: 3px 2px #5b6d53;
     text-align: center;
+}
+
+.charCamp {
+    justify-content: left;
+    text-align: center;
+    padding: 5px;
+    margin-top: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    font-family: Calibri;
+    color: #5b6d53;
+    display: block;
+}
+
+.createCharBtn {
+    text-decoration: none;
+    color: #fff;
 }
 
 .campaign-display {
@@ -273,15 +290,17 @@ h2.profileHeader {
     padding-bottom: 5px;
     padding-top: 5px;
     border-radius: 10px;
-    background-color: #5b6d53;
-    color: #eee;
+    border-bottom: 2px solid #5b6d53;
+    border-left: 2px solid #5b6d53;
+    letter-spacing: 5px;
+    color: #5b6d53;
     width: 200px;
     cursor: pointer;
 
 }
 .campaign-list:hover {
-    background-color: #fff;
-    color: #5b6d53;
+    background-color: #5b6d53;
+    color: #fff;
     box-shadow: 3px 3px 7px #5b6d53;
     }
 .campaign-list-div,
