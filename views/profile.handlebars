@@ -1,10 +1,62 @@
 <div class='profile-page'>
-    <h2 class="userName"> {{user.user_name}}</h2>
+    <h2 class="userName profileHeader"> {{user.user_name}}</h2>
+</div>
 
-    <div>
-        <div class='profileCampaigns'>
-            {{character_name}}
-            
+<div class='campaign-display'>
+    <div class='campaign-selector'>
+        <div class='campaign-list-div'>
+            <h2 class='profileHeader'>
+                Campaigns
+            </h2>
+            <div>
+                {{#each campaigns as |campaign| }}
+                <h3 class="campaign-list"> {{campaign.campaign_name}} </h3>
+                {{/each}}
+            </div>
+        </div>
+    </div>
+    <div class='profile-campaigns'>
+        <div class='character-info'>
+            <h2 class='profileHeader'>Character
+            </h2>
+
+            <h2>Name: {{characters.character_name}}</h3>
+                <div class="charRaceClass">
+                    <div class="charInfoBlock">
+                        <label class='charInfoLabel'>RACE</label>
+                        <h3 class="charInfo">{{characters.character_race}}</h3>
+                    </div>
+                    <div class="charInfoBlock">
+                        <label class='charInfoLabel'>CLASS</label>
+                        <h3 class='charInfo'> {{characters.character_class}}</h3>
+                    </div>
+                </div>
+                <div class="charInfoAttr">
+                    <div class="charInfoBlock">
+                        <label class='charInfoLabel'>STRENGTH</label>
+                        <h3 class="charInfo">{{characters.strength}}</h3>
+                    </div>
+                    <div class="charInfoBlock">
+                        <label class='charInfoLabel'>DEXTERITY</label>
+                        <h3 class='charInfo'> {{characters.dexterity}}</h3>
+                    </div>
+                    <div class="charInfoBlock">
+                        <label class='charInfoLabel'>CONSTITUTION</label>
+                        <h3 class='charInfo'> {{characters.constitution}}</h3>
+                    </div>
+                    <div class="charInfoBlock">
+                        <label class='charInfoLabel'>INTELLIGENCE</label>
+                        <h3 class='charInfo'> {{characters.intelligence}}</h3>
+                    </div>
+                    <div class="charInfoBlock">
+                        <label class='charInfoLabel'>WISDOM</label>
+                        <h3 class='charInfo'> {{characters.wisdom}}</h3>
+                    </div>
+                    <div class="charInfoBlock">
+                        <label class='charInfoLabel'>CHARISMA</label>
+                        <h3 class='charInfo'> {{characters.charisma}}</h3>
+                    </div>
+                </div>
         </div>
     </div>
 </div>

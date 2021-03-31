@@ -34,30 +34,80 @@ const checkUserLoggedIn = (req, res, next) => {
 // });
 // protected route
 router.get('/profile', async (req, res) => {
-try {
-  const user = await User.findOne({
-    where: {
-      id: 1
-    },
-    attributes: { exclude: ['password'] },
-    include: [
-      {
-        model: Character,
-        attributes: ['character_name']
+  try {
+    const user = await User.findOne({
+      where: {
+        id: 1
       },
-      {
-        model: Campaign,
-        as: 'user_campaigns'
-      }
-    ],
-    raw: true
-  })
-  res.render('profile', {
-    user
-  })
-} catch (err) {
-  res.status(500).json(err)
-}
+      attributes: { exclude: ['password'] },
+      include: [
+        {
+          model: Character,
+          attributes: ['character_name']
+        },
+        {
+          model: Campaign,
+          attributes: [
+            'id',
+            'campaign_name',
+            'userId'
+          ],
+          as: 'user_campaigns'
+        }
+      ],
+      raw: true
+    })
+
+    const campaigns = await Campaign.findAll({
+      where: {
+        user_id: 1
+      },
+      attributes: [
+        'id',
+        'campaign_name',
+        'user_id'
+      ],
+      raw: true
+    })
+
+    const characters = await Character.findOne({
+      where: {
+        user_id: 1
+      },
+      attributes: [
+        'id',
+        'strength',
+        'dexterity',
+        'constitution',
+        'intelligence',
+        'wisdom',
+        'charisma',
+        'armor',
+        'speed',
+        'hitpoints_current',
+        'hitpoints_temp',
+        'hit_dice',
+        'character_name',
+        'character_race',
+        'character_class',
+        'traits',
+        'items',
+        'flaws',
+        'notes',
+        'user_id',
+        'campaign_id'
+      ],
+      raw: true
+    })
+
+    res.render('profile', {
+      user,
+      campaigns,
+      characters
+    })
+  } catch (err) {
+    res.status(500).json(err)
+  }
 })
 
 

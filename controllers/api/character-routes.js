@@ -39,9 +39,11 @@ router.get('/', (req, res) => {
           'campaign_name',
           'user_id'
         ],
+
         include: {
           model: User,
-          attributes: ['user_name']
+          attributes: ['user_name'],
+          as: 'campaign_users'
         }
       }
     ]
@@ -96,7 +98,8 @@ router.get('/:id', (req, res) => {
         ],
         include: {
           model: User,
-          attributes: ['user_name']
+          attributes: ['user_name'],
+          as: 'campaign_users'
         }
       }
     ]

@@ -6,37 +6,56 @@
             <input type="text" id="charName" class='character-input'>
         </div>
         <div class='charRaceClass'>
-            <label for="charRace" class="characterLabel">Race</label>
-            <input type="text" id="charRace" class='character-input'>
-
-            <label for="charClass" class="characterLabel">Class</label>
-            <select id="classList" name="classList" class="classSelector">
-            </select>
+            <div class="charBlock">
+                <label for="charRace" class="characterLabel">Race</label>
+                <input type="text" id="charRace" class='character-input'>
+            </div>
+            <div class="charBlock">
+                <label for="charClass" class="characterLabel">Class</label>
+                <select id="classList" name="classList" class="classSelector">
+                </select>
+            </div>
         </div>
         <div class="attributes">
-            <label for="charStrength" class="attributesLabel">Strength</label>
-            <input type="number" id="charStrength" class='attribute-input'>
-            <label for="charDexterity" class="attributesLabel">Dexterity</label>
-            <input type="number" id="charDexterity" class='attribute-input'>
-            <label for="charConstitution" class="attributesLabel">Constitution</label>
-            <input type="number" id="charConstitution" class='attribute-input'>
-            
+            <div class="charBlock">
+                <label for="charStrength" class="attributesLabel">Strength</label>
+                <input type="number" id="charStrength" class='attribute-input'>
+            </div>
+            <div class="charBlock">
+                <label for="charDexterity" class="attributesLabel">Dexterity</label>
+                <input type="number" id="charDexterity" class='attribute-input'>
+            </div>
+            <div class="charBlock">
+                <label for="charConstitution" class="attributesLabel">Constitution</label>
+                <input type="number" id="charConstitution" class='attribute-input'>
+            </div>
+
         </div>
         <div>
-            <label for="charIntelligence" class="attributesLabel">Intelligence</label>
-            <input type="number" id="charIntelligence" class='attribute-input'>
-            <label for="charWisdom" class="attributesLabel">Wisdom</label>
-            <input type="number" id="charWisdom" class='attribute-input'>
-            <label for="charCharisma" class="attributesLabel">Charisma</label>
-            <input type="number" id="charCharisma" class='attribute-input'>
+            <div class="charBlock">
+                <label for="charIntelligence" class="attributesLabel">Intelligence</label>
+                <input type="number" id="charIntelligence" class='attribute-input'>\
+            </div>
+            <div class="charBlock">
+                <label for="charWisdom" class="attributesLabel">Wisdom</label>
+                <input type="number" id="charWisdom" class='attribute-input'>
+            </div>
+            <div class="charBlock">
+                <label for="charCharisma" class="attributesLabel">Charisma</label>
+                <input type="number" id="charCharisma" class='attribute-input'>
+            </div>
         </div>
         <div class="armorSpeed">
+            <div class="charBlock">
             <label for="charArmor" class="attributesLabel">armor</label>
             <input type="number" id="charArmor" class='attribute-input'>
+            </div>
+            <div class="charBlock">
             <label for="charArmor" class="attributesLabel">speed</label>
             <input type="number" id="charArmor" class='attribute-input'>
+            </div>
         </div>
-        <div> 
+        <div>
             <label for="charTraits" class="traitsLabel">Traits</label>
             <textarea type="text" id="charTraits" rows="4" class='character-input'></textarea>
             <label for="charItems" class="traitsLabel">Items</label>
@@ -46,11 +65,11 @@
             <label for="charNotes" class="traitsLabel">Notes</label>
             <textarea type="text" id="charNotes" rows="4" class='character-input'></textarea>
         </div>
-        <div> 
+        <div>
             <label for="campaignSelector" class="characterLabel">Campaign Selector</label>
             <select id="classList" name="campaignSelector" class="classSelector">
                 {{#each campaigns as |campaign| }}
-                <option value="{{ campaign.id }}"> {{ campaign.campaignName }}</option>
+                <option class='campaign-options' value="{{ campaign.id }}"> {{ campaign.campaign_name }}</option>
                 {{/each}}
             </select>
         </div>
