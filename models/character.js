@@ -70,19 +70,19 @@ Character.init(
       allowNull: false
     },
     traits: {
-      type: DataTypes.STRING,
+      type: DataTypes.TEXT,
       allowNull: false
     },
     items: {
-      type: DataTypes.STRING,
+      type: DataTypes.TEXT,
       allowNull: false
     },
     flaws: {
-      type: DataTypes.STRING,
+      type: DataTypes.TEXT,
       allowNull: false
     },
     notes: {
-      type: DataTypes.STRING,
+      type: DataTypes.TEXT,
       allowNull: false
     },
     userId: {
@@ -97,6 +97,7 @@ Character.init(
       references: {
         model: Campaign,
         key: 'id'
+<<<<<<< HEAD
       }
     },
     role: {
@@ -106,6 +107,17 @@ Character.init(
         key: 'role'
       }
     }
+=======
+      },
+      role: {
+        type: DataTypes.STRING,
+        references: {
+          model: "user",
+          key: "role"
+        }
+      }
+    },
+>>>>>>> e42cebd40352b664b22aea22c8b7b15335585428
   },
   {
     sequelize,

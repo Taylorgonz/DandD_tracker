@@ -13,7 +13,7 @@ Campaign.init(
       primaryKey: true,
       autoIncrement: true
     },
-    campaignName: {
+    campaign_name: {
       type: DataTypes.STRING,
       allowNull: false
     },

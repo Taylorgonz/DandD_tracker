@@ -55,9 +55,11 @@ router.get('/:id', (req, res) => {
                     'id', 
                     'campaign_name', 
                     'userId'
-                ]
+                ],
+                as: 'user_campaigns'
             }
-        ]
+        ],
+        raw: true
     })
         .then(userData => {
             if (!userData) {

@@ -8,15 +8,16 @@
 body.background {
     background-image: url('../images/background.jpg');
     background-repeat: no-repeat;
-    background-size: cover;
-
+    background-attachment: fixed;
+    background-position: center;
 }
+
 h1.main-header {
     text-align: center;
     font-family: draconis;
     color: #fff;
     font-size: 65px;
-    text-shadow: 4px 4px  #879F7C;
+    text-shadow: 4px 4px  #5b6d53 ;
     margin-bottom: 0px;
 
 }
@@ -30,7 +31,11 @@ h2.sub-header {
     text-decoration: underline;
 }
 
-.login-form {
+/* login/signup page styling */
+/* ------------------------------------------------- */
+
+.login-form,
+.signup-form {
     flex-direction: column;
     text-align: center;
     background: rgb(255, 255, 255, 0.8);
@@ -45,7 +50,7 @@ h2.sub-header {
     color: #fff;
     padding-top: 10px;
     font-family: boldkei;
-    text-shadow: 3px 3px #879F7C;
+    text-shadow: 3px 3px #5b6d53 ;
     font-size: xx-large;
     margin-bottom: 10px;
 
@@ -55,7 +60,7 @@ h2.sub-header {
     margin-top: 0px;
     margin-bottom: 0px;
     font-family: Calibri;
-    color: #879F7C;
+    color: #5b6d53 ;
     letter-spacing: 3px;
     font-size: large;
 }
@@ -68,7 +73,7 @@ h2.sub-header {
     width: 200px;
     margin-left: auto;
     margin-right: auto;
-    border: 2px solid #879F7C;
+    border: 2px solid #5b6d53 ;
     text-align: center;
     
 }
@@ -88,21 +93,21 @@ button.login-button {
     padding-top: 10px;
     padding-bottom: 10px;
     color: #fff;
-    background-color: #879F7C;
+    background-color: #5b6d53 ;
     text-decoration: none;
     border: none;
     border-radius: 5px;
-    font-family: boldkei;
+    font-family: Calibri;
     word-wrap: normal;
 }
 
 button.login-button:hover {
 background-color: #fff;
-color: #879F7C;
+color: #5b6d53 ;
 }
 
 .signup-button {
-    color: #879F7C;
+    color: #5b6d53 ;
     margin-top: 10px;
     font-family: Calibri;
 }
@@ -110,3 +115,284 @@ color: #879F7C;
     color: #eee;
     
 }
+
+/* character page styling */
+/* ------------------------------------------------------- */
+.character-form {
+    text-align: center;
+    background: rgb(255, 255, 255, 0.7);
+    padding: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%;
+    border-radius: 25px;
+    color: #5b6d53;
+}
+.charFormHeader {
+    font-family: boldkei;
+    color: #fff;
+    text-shadow: 3px 2px #5b6d53 ;
+
+}
+
+.charBlock {
+    display:inline-block;
+    margin-right: 5px;
+    margin-left: 5px;
+}
+
+label.characterLabel,
+label.attributesLabel {
+    font-family: Calibri;
+    font-size: large;
+    display: block;
+}
+label.traitsLabel {
+    font-family: Calibri;
+    font-size: large;
+    display: block;
+}
+
+
+
+input.character-input {
+    width: 200px;
+    margin-left: auto;
+    margin-right: auto;
+    border: 2px solid #5b6d53;
+    border-radius: 10px;
+    color:#5b6d53;
+    font-family: Calibri;
+    text-align: center;
+    font-size: large;
+    margin-bottom: 5px;
+}
+div.traits {
+    display: block;
+}
+textarea.character-input {
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    border: 2px solid #5b6d53;
+    border-radius: 10px;
+    color:#5b6d53;
+    font-family: Calibri;
+    text-align: center;
+    font-size: medium;
+    margin-bottom: 5px;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input.attribute-input {
+    width: 50px;
+    margin-left: 12px;
+    margin-right: 12px;
+    border: 2px solid #5b6d53;
+    border-radius: 10px;
+    color:#5b6d53;
+    font-family: Calibri;
+    text-align: center;
+    font-size: large;
+    margin-bottom: 5px;
+}
+select.classSelector {
+    width: 200px;
+    margin-left: auto;
+    margin-right: auto;
+    border: 2px solid #5b6d53;
+    border-radius: 10px;
+    color:#5b6d53;
+    font-family: Calibri;
+    text-align: center;
+    font-size: large;
+    margin-bottom: 5px;
+}
+button.character-submit-button {
+    width: 70px;
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    color: #fff;
+    background-color: #5b6d53;
+    text-decoration: none;
+    border: none;
+    border-radius: 5px;
+    font-family: Calibri;
+    word-wrap: normal;
+}
+
+button.character-submit-button:hover {
+background-color: #fff;
+color: #5b6d53;
+}
+
+/* profile page */
+/* ------------------------------------------------------------- */
+
+
+.profile-page {
+    text-align: center;
+    background: rgb(255, 255, 255, 0.7);
+    padding: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    width:75%;
+    border-radius: 25px;
+    color: #5b6d53;
+}
+h2.profileHeader {
+    font-family: boldkei;
+    color: #fff;
+    text-shadow: 3px 2px #5b6d53;
+    text-align: center;
+}
+
+.charCamp {
+    justify-content: left;
+    text-align: center;
+    padding: 5px;
+    margin-top: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    font-family: Calibri;
+    color: #5b6d53;
+    display: block;
+}
+
+.createCharBtn {
+    text-decoration: none;
+    color: #fff;
+}
+
+.campaign-display {
+    display: flex;
+    text-decoration: none;
+}
+
+.campaign-list {
+    text-align: center;
+    text-decoration: none;
+    list-style: none;
+    font-weight: bold;
+    font-size: x-large;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding-bottom: 5px;
+    padding-top: 5px;
+    border-radius: 10px;
+    border-bottom: 2px solid #5b6d53;
+    border-left: 2px solid #5b6d53;
+    letter-spacing: 5px;
+    color: #5b6d53;
+    width: 200px;
+    cursor: pointer;
+
+}
+.campaign-list:hover {
+    background-color: #5b6d53;
+    color: #fff;
+    box-shadow: 3px 3px 7px #5b6d53;
+    }
+.campaign-list-div,
+.character-info {
+    display: block;
+}
+
+.campaign-selector {
+    justify-content: center;
+    background: rgb(255, 255, 255, 0.7);
+    padding: 10px;
+    margin-top: 10px;
+    margin-left: auto;
+    margin-right: 10px;
+    width: 25%;
+    border-radius: 25px;
+    font-family: Calibri;
+    color: #5b6d53;
+    display: inline-flex;
+}
+.profile-campaigns {
+    text-align: center;
+    background: rgb(255, 255, 255, 0.7);
+    padding: 10px;
+    margin-top: 10px;
+    margin-left: 0px;
+    margin-right: auto;
+    width: 50%;
+    border-radius: 25px;
+    font-family: Calibri;
+    color: #5b6d53;
+    display: inline-flex;
+    justify-content: center;
+}
+h3 {
+    font-size: x-large
+}
+.charInfo {
+    margin-top: 0px;
+    margin-bottom:0px;
+}
+
+label.charInfoLabel {
+    font-family: Calibri;
+    font-size: large;
+    /* text-decoration: underline; */
+}
+
+.charInfoBlock {
+    display:inline-block;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-right: 5px;
+    margin-left: 5px;
+    border: 2px solid #5b6d53;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+
+@media screen and (max-width: 600px) {
+
+    /* body.background {
+        background-size: 105em;
+        background-position: center;
+    } */
+    .campaign-display {
+        display:block;
+        text-decoration: none;
+    }
+    .campaign-selector,
+    .profile-campaigns {
+        width: 90%;
+        margin-left: 10px;
+        margin-right: auto;
+        margin-bottom: 5px;
+    }
+  }
+@media screen and (max-width: 400px) {
+
+    /* body.background {
+        background-size: 105em;
+        background-position: center;
+    } */
+    .campaign-display {
+        display:block;
+        text-decoration: none;
+    }
+    .campaign-selector,
+    .profile-campaigns {
+        width: 90%;
+        margin-right: auto;
+        margin-bottom: 5px;
+    }
+  }
