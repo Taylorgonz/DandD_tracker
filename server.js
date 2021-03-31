@@ -7,8 +7,8 @@ const routes = require('./controllers');
 const sequelize = require('./config/connection')
 const passport = require('passport')
 const cookieSession = require('cookie-session')
-require('./config/passport')
 const models = require('./models')
+
 
 const app = express();
 const PORT = process.env.PORT || 3001;
