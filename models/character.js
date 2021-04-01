@@ -97,17 +97,6 @@ Character.init(
       references: {
         model: Campaign,
         key: 'id'
-<<<<<<< HEAD
-      }
-    },
-    role: {
-      type: DataTypes.STRING,
-      references: {
-        model: 'user',
-        key: 'role'
-      }
-    }
-=======
       },
       role: {
         type: DataTypes.STRING,
@@ -117,7 +106,6 @@ Character.init(
         }
       }
     },
->>>>>>> e42cebd40352b664b22aea22c8b7b15335585428
   },
   {
     sequelize,
