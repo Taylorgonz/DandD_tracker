@@ -72,6 +72,13 @@ router.get('/profile', async (req, res) => {
         'campaign_name',
         'user_id'
       ],
+      include: [
+        {
+          model: User,
+          attributes: ['user_name', 'id'],
+          as: 'campaign_users'
+        }
+      ],
       raw: true
     })
 

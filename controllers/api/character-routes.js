@@ -158,7 +158,7 @@ router.put('/:id', (req, res) => {
       wisdom: req.body.wisdom,
       charisma: req.body.charisma,
       armor: req.body.armor,
-      speed: req.speed.armor,
+      speed: req.body.speed,
       hitpoints_current: req.body.hitpoints_current,
       hitpoints_temp: req.body.hitpoints_temp,
       hit_dice: req.body.hit_dice,
