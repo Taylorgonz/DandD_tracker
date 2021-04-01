@@ -44,17 +44,17 @@ campaignBtn.on("click", (event) => {
 
                 $(".character-input").append(`
                 <div class='hitBlock'>
-                <div class="charInfoBlock">
+                <div class="hitPointBlock">
                 <label class='charInfoLabel'>CURRENT HITPOINTS</label>
-                <h3 class="charInfo" id="hitpoints_current" >${index.hitpoints_current}</h3>
+                <h3 class="charInfo hitPoints" id="hitpoints_current" >${index.hitpoints_current}</h3>
             </div>
-            <div class="charInfoBlock">
+            <div class="hitPointBlock">
                 <label class='charInfoLabel'>TEMPORARY HITPOINTS</label>
-                <h3 class='charInfo' id="hitpoints_temp" > ${index.hitpoints_temp}</h3>
+                <h3 class='charInfo hitPoints' id="hitpoints_temp" > ${index.hitpoints_temp}</h3>
             </div>
-            <div class="charInfoBlock">
+            <div class="hitPointBlock">
                 <label class='charInfoLabel'>HIT DICE</label>
-                <h3 class='charInfo' id="hit_dice" > ${index.hit_dice}</h3>
+                <h3 class='charInfo hitPoints' id="hit_dice" > ${index.hit_dice}</h3>
             </div>
                 
                 </div>

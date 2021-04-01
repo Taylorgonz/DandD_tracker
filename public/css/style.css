@@ -301,7 +301,7 @@ h2.profileHeader {
     border-left: 2px solid #5b6d53;
     letter-spacing: 5px;
     color: #5b6d53;
-    width: 200px;
+    width: 300px;
     cursor: pointer;
 
 }
@@ -365,6 +365,29 @@ label.charInfoLabel {
     border: 2px solid #5b6d53;
     border-radius: 5px;
     margin-bottom: 10px;
+    cursor: default;
+}
+
+[contenteditable="true"]:active,
+[contenteditable="true"]:focus,
+[contenteditable="true"]:hover{
+  border:none;
+  border-radius: 5px;
+  outline:none;
+  cursor: text;
+  box-shadow: 3px 3px 7px #5b6d53;
+
+}
+.hitPointBlock {
+    display:inline-block;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-right: 5px;
+    margin-left: 5px;
+    border: 2px solid #5b6d53;
+    background-color: #eee;
+    border-radius: 5px;
+    margin-bottom: 10px;
 }
 button#edit {
     width: 70px;
@@ -383,9 +406,10 @@ button#edit {
     word-wrap: normal;
 }
 
-buttonedit:hover {
+button#edit:hover {
 background-color: #fff;
 color: #5b6d53 ;
+box-shadow: 3px 3px 7px #5b6d53;
 }
 
 
