@@ -11,9 +11,9 @@
             <h2 class='profileHeader'>
                 Campaigns
             </h2>
-            <div class='campaign=options'>
+            <div class='campaign-options'>
                 {{#each campaigns as |campaign| }}
-                <h3 class="campaign-list" value="{{user.id}}"> {{campaign.campaign_name}} </h3>
+                <h3 class="campaign-list campaign-option-btn" id="{{campaign.id}}"value="{{campaign.user_id}}"> {{campaign.campaign_name}} </h3>
                 {{/each}}
             </div>
         </div>
@@ -23,8 +23,12 @@
         <div class='character-info'>
             <h2 class='profileHeader'>Character
             </h2>
+            <div class='character-input'>
+                
+            </div>
 
-            <h2>Name: {{characters.character_name}}</h3>
+
+            {{!-- <h2>Name: {{characters.character_name}}</h3>
                 <div class="charRaceClass">
                     <div class="charInfoBlock">
                         <label class='charInfoLabel'>RACE</label>
@@ -80,7 +84,7 @@
                     <div class="charInfoBlock">
                         <label class='charInfoLabel'>NOTES</label>
                         <h3 class='charInfo'> {{characters.notes}}</h3>
-                    </div>
-                </div>
+                    </div>--}}
+                </div> 
         </div>
     </div>
