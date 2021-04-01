@@ -259,12 +259,19 @@ h2.profileHeader {
     justify-content: left;
     text-align: center;
     padding: 5px;
-    margin-top: 10px;
+    margin-top: 5px;
+    margin-bottom: 0px;
     margin-left: auto;
     margin-right: auto;
     font-family: Calibri;
     color: #5b6d53;
-    display: block;
+    display: flex;
+    justify-content: center;
+}
+.dash {
+    margin-right: 20px;
+    margin-left: 20px;
+
 }
 
 .createCharBtn {
@@ -358,6 +365,27 @@ label.charInfoLabel {
     border: 2px solid #5b6d53;
     border-radius: 5px;
     margin-bottom: 10px;
+}
+button#edit {
+    width: 70px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    color: #fff;
+    background-color: #5b6d53 ;
+    text-decoration: none;
+    border: none;
+    border-radius: 5px;
+    font-family: Calibri;
+    word-wrap: normal;
+}
+
+button#edit:hover {
+background-color: #fff;
+color: #5b6d53 ;
 }
 
 

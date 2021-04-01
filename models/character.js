@@ -39,7 +39,7 @@ Character.init(
     },
     armor: {
       type: DataTypes.INTEGER,
-      allowNull: false
+      allowNull: true
     },
     speed: {
       type: DataTypes.INTEGER,
