@@ -1,7 +1,9 @@
-const router = require('express').Router()
-const passport = require('passport')
-const { User, Campaign, Character } = require('../models')
-const { route } = require('./api/campaign-routes')
+const router = require('express').Router();
+const passport = require('passport');
+const userAuth = require('../utils/auth');
+const { User, Campaign, Character } = require('../models');
+const { route } = require('./api/campaign-routes');
+
 router.get('/', (req, res) => {
  res.redirect('/profile')
 })
