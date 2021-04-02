@@ -13,9 +13,9 @@ router.get('/', async (req, res) => {
         }
       )
     }
-    res.render('profile');
+    res.redirect('/profile');
   } else {
-    res.render('login');
+    res.redirect('/login');
   }
 })
 
