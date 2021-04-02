@@ -2,14 +2,22 @@ const router = require('express').Router();
 const { requiresAuth } = require('express-openid-connect');
 const { User, Campaign, Character } = require('../models');
 
-router.get('/', (req, res) => {
- if (req.oidc.isAuthenticated()) {
-   res.redirect('/profile');
- } else {
-  res.render('homepage');
- }
+router.get('/', async (req, res) => {
+  if (req.oidc.isAuthenticated()) {
+    userData = await User.findOne({ where: { email: req.oidc.user.email } })
+    if (!userData) {
+      userData = User.create(
+        {
+          user_name: req.oidc.user.nickname,
+          email: req.oidc.user.email
+        }
+      )
+    }
+    res.render('profile');
+  } else {
+    res.render('login');
+  }
 })
-
 
 router.get('/character-builder', requiresAuth(), async (req, res) => {
   try {
