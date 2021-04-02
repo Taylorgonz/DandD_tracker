@@ -2,16 +2,21 @@ const router = require('express').Router();
 const { User, Campaign, Character } = require('../models');
 const { route } = require('./api/campaign-routes');
 
-router.get('/', (req, res) => {
- if (req.oidc.isAuthenticated()) {
-   res.render('profile');
- } else {
-  res.render('login');
- }
-})
-
-router.get('/signup', (req, res) => {
-  res.render('signup')
+router.get('/', async (req, res) => {
+  if (req.oidc.isAuthenticated()) {
+    userData = await User.findOne({ where: { email: req.oidc.user.email } })
+    if (!userData) {
+      userData = User.create(
+        {
+          user_name: req.oidc.user.nickname,
+          email: req.oidc.user.email
+        }
+      )
+    }
+    res.render('profile');
+  } else {
+    res.render('login');
+  }
 })
 
 router.get('/character-builder', async (req, res) => {
