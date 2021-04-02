@@ -17,14 +17,14 @@ Campaign.init(
       allowNull: false
     },
     userId: {
-      type: DataTypes.INTEGER,
+      type: DataTypes.STRING,
       references: {
         model: User,
         key: 'id'
       }
     },
     dmId: {
-      type: DataTypes.INTEGER,
+      type: DataTypes.STRING,
       allowNull: false,
       references: {
         model: User,

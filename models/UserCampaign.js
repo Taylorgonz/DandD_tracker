@@ -14,7 +14,7 @@ UserCampaign.init(
       primaryKey: true
     },
     userId: {
-      type: DataTypes.INTEGER,
+      type: DataTypes.STRING,
       references: {
         model: User,
         key: 'id'

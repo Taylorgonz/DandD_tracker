@@ -8,6 +8,7 @@ router.get('/', async (req, res) => {
     if (!userData) {
       userData = User.create(
         {
+          id: req.oidc.user.sub,
           user_name: req.oidc.user.nickname,
           email: req.oidc.user.email
         }
@@ -38,11 +39,12 @@ router.get('/character-builder', requiresAuth(), async (req, res) => {
 
 router.get('/profile', async (req, res) => {
   try {
+
+    const user_id = req.oidc.user.sub;
     const user = await User.findOne({
       where: {
-        id: 1
+        id: user_id
       },
-      attributes: { exclude: ['password'] },
       include: [
         {
           model: Character,
@@ -63,7 +65,7 @@ router.get('/profile', async (req, res) => {
 
     const campaigns = await Campaign.findAll({
       where: {
-        user_id: 1
+        user_id: user_id
       },
       attributes: [
         'id',
@@ -82,7 +84,7 @@ router.get('/profile', async (req, res) => {
 
     const characters = await Character.findOne({
       where: {
-        user_id: 1
+        user_id: user_id
       },
       attributes: [
         'id',
@@ -110,13 +112,11 @@ router.get('/profile', async (req, res) => {
       raw: true
     })
 
-    const nickname = req.oidc.user.nickname;
 
     res.render('profile', {
       user,
       campaigns,
       characters,
-      nickname
     })
   } catch (err) {
     res.status(500).json(err)
