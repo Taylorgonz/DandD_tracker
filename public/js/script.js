@@ -1,6 +1,5 @@
 
 classArray = [
-    "Select a class",
     "Barbarian",
     "Bard",
     "Cleric",
@@ -26,7 +25,6 @@ classList();
 
 const campaignBtn = $(".campaign-option-btn");
 const characterInput = $('.character-input')
-console.log(characterInput)
 
 // displays character associated with campaign available
 campaignBtn.on("click", (event) => {

@@ -1,7 +1,6 @@
 const { Model, DataTypes } = require('sequelize')
 const User = require('./User')
 const sequelize = require('../config/connection')
-// const Character = require('./Character')
 
 class Campaign extends Model {}
 
@@ -18,19 +17,20 @@ Campaign.init(
       allowNull: false
     },
     userId: {
-      type: DataTypes.INTEGER,
+      type: DataTypes.STRING,
+      references: {
+        model: User,
+        key: 'id'
+      }
+    },
+    dmId: {
+      type: DataTypes.STRING,
+      allowNull: false,
       references: {
         model: User,
         key: 'id'
       }
     }
-    // characterId: {
-    //   type: DataTypes.INTEGER,
-    //   references: {
-    //     model: Character,
-    //     key: 'id'
-    //   }
-    // }
   },
   {
     sequelize,

@@ -1,6 +1,6 @@
 const router = require('express').Router()
 const { Campaign, Character, User } = require('../../models')
-
+const {auth} = require('express-openid-connect')
 // Get all characters
 router.get('/', (req, res) => {
   Character.findAll({
@@ -126,7 +126,7 @@ router.post('/', (req, res) => {
     wisdom: req.body.wisdom,
     charisma: req.body.charisma,
     armor: req.body.armor,
-    speed: req.speed.armor,
+    speed: req.body.speed,
     hitpoints_current: req.body.hitpoints_current,
     hitpoints_temp: req.body.hitpoints_temp,
     hit_dice: req.body.hit_dice,
@@ -138,7 +138,7 @@ router.post('/', (req, res) => {
     flaws: req.body.flaws,
     notes: req.body.notes,
     campaign_id: req.body.campaign_id,
-    creator_id: req.session.user_id
+    user_id: req.body.user_id
   })
     .then(characterData => res.json(characterData))
     .catch(err => {

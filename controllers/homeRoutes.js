@@ -1,28 +1,35 @@
 const router = require('express').Router();
-const passport = require('passport');
-const userAuth = require('../utils/auth');
+const { requiresAuth } = require('express-openid-connect');
 const { User, Campaign, Character } = require('../models');
-const { route } = require('./api/campaign-routes');
 
-router.get('/', (req, res) => {
- res.redirect('/profile')
-})
-router.get('/login', (req, res) => {
-  res.render('login')
+router.get('/', async (req, res) => {
+  if (req.oidc.isAuthenticated()) {
+    userData = await User.findOne({ where: { email: req.oidc.user.email } })
+    if (!userData) {
+      userData = User.create(
+        {
+          id: req.oidc.user.sub,
+          user_name: req.oidc.user.nickname,
+          email: req.oidc.user.email
+        }
+      )
+    }
+    res.redirect('/profile');
+  } else {
+    res.redirect('/login');
+  }
 })
 
-router.get('/signup', (req, res) => {
-  res.render('signup')
-})
-
-router.get('/character-builder', async (req, res) => {
+router.get('/character-builder', requiresAuth(), async (req, res) => {
   try {
     const campaigns = await Campaign.findAll({
       raw: true
     })
 
+    const user_id = req.oidc.user.sub;
     res.render('character-builder', {
-      campaigns
+      campaigns,
+      user_id
     });
   } catch (err) {
     res.status(500).json(err);
@@ -30,21 +37,14 @@ router.get('/character-builder', async (req, res) => {
 
 })
 
-// middleware to check if user is logged in
-const checkUserLoggedIn = (req, res, next) => {
-  req.user ? next() : res.sendStatus(401)
-}
-// router.get('/profile', async (req, res) => {
-//   res.render('profile')
-// });
-// protected route
 router.get('/profile', async (req, res) => {
   try {
+
+    const user_id = req.oidc.user.sub;
     const user = await User.findOne({
       where: {
-        id: 1
+        id: user_id
       },
-      attributes: { exclude: ['password'] },
       include: [
         {
           model: Character,
@@ -65,7 +65,7 @@ router.get('/profile', async (req, res) => {
 
     const campaigns = await Campaign.findAll({
       where: {
-        user_id: 1
+        user_id: user_id
       },
       attributes: [
         'id',
@@ -84,7 +84,7 @@ router.get('/profile', async (req, res) => {
 
     const characters = await Character.findOne({
       where: {
-        user_id: 1
+        user_id: user_id
       },
       attributes: [
         'id',
@@ -112,29 +112,15 @@ router.get('/profile', async (req, res) => {
       raw: true
     })
 
+
     res.render('profile', {
       user,
       campaigns,
-      characters
+      characters,
     })
   } catch (err) {
     res.status(500).json(err)
   }
-})
-
-
-// auth routes
-router.get('/auth/google', passport.authenticate('google', { scope: ['profile', 'email'] }))
-
-router.get('/auth/google/callback', passport.authenticate('google', { failureRedirect: '/failed' }),
-  function (req, res) {
-    res.redirect('/profile')
-  }
-)
-//
-
-router.get('/signup', (req, res) => {
-  res.render('signup');
-})
+});
 
 module.exports = router;

@@ -47,15 +47,15 @@ Character.init(
     },
     hitpoints_current: {
       type: DataTypes.INTEGER,
-      allowNull: false
+      allowNull: true
     },
     hitpoints_temp: {
       type: DataTypes.INTEGER,
-      allowNull: false
+      allowNull: true
     },
     hit_dice: {
       type: DataTypes.INTEGER,
-      allowNull: false
+      allowNull: true
     },
     character_name: {
       type: DataTypes.STRING,
@@ -86,7 +86,7 @@ Character.init(
       allowNull: false
     },
     userId: {
-      type: DataTypes.INTEGER,
+      type: DataTypes.STRING,
       references: {
         model: User,
         key: 'id'
