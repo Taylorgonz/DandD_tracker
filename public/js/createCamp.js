@@ -12,7 +12,7 @@ async function CreateCampaign(event) {
             campaign_name,
             user_id
         }),
-        header: {
+        headers: {
             'Content-Type': 'application/json',
         }
     });
