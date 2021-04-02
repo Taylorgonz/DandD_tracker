@@ -1,7 +1,9 @@
-const router = require('express').Router()
-const passport = require('passport')
-const { User, Campaign, Character } = require('../models')
-const { route } = require('./api/campaign-routes')
+const router = require('express').Router();
+const passport = require('passport');
+const userAuth = require('../utils/auth');
+const { User, Campaign, Character } = require('../models');
+const { route } = require('./api/campaign-routes');
+
 router.get('/', (req, res) => {
  res.redirect('/profile')
 })
@@ -69,6 +71,13 @@ router.get('/profile', async (req, res) => {
         'id',
         'campaign_name',
         'user_id'
+      ],
+      include: [
+        {
+          model: User,
+          attributes: ['user_name', 'id'],
+          as: 'campaign_users'
+        }
       ],
       raw: true
     })
