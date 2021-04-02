@@ -52,11 +52,15 @@ router.get('/:id', (req, res) => {
 
 // Create a new campaign
 router.post('/', (req, res) => {
-  const user_id = req.oidc.user.sub
-  Campaign.create({
+  console.log(req.body.campaign_name)
+  Campaign.create(
+    {
     campaign_name: req.body.campaign_name,
-    user_id: user_id,
-    dm_id: user_id
+    user_id: req.body.user_id,
+    dm_id: req.body.user_id,
+    // user_id: req.oidc.user.sub,
+    // dm_id: req.oidc.user.sub
+    
   })
     .then(campaignData => res.json(campaignData))
     .catch(err => {

@@ -20,7 +20,7 @@ UserCampaign.init(
         key: 'id'
       }
     },
-    campaignId: {
+    campaign_id: {
       type: DataTypes.INTEGER,
       references: {
         model: Campaign,

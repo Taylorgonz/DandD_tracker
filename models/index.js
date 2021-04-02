@@ -26,7 +26,7 @@ User.belongsToMany(Campaign, {
 Character.belongsTo(Campaign, {
 });
 Campaign.hasMany(Character, {
-  foreignKey: 'campaignId'
+  foreignKey: 'campaign_id'
 });
 
 User.hasMany(Character, {
