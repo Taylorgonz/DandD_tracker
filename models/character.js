@@ -85,26 +85,13 @@ Character.init(
       type: DataTypes.TEXT,
       allowNull: false
     },
-    userId: {
+    user_id: {
       type: DataTypes.STRING,
-      references: {
-        model: User,
-        key: 'id'
-      }
+      allowNull: false
     },
-    campaignId: {
+    campaign_id: {
       type: DataTypes.INTEGER,
-      references: {
-        model: Campaign,
-        key: 'id'
-      },
-      role: {
-        type: DataTypes.STRING,
-        references: {
-          model: "user",
-          key: "role"
-        }
-      }
+      allowNull: false
     },
   },
   {

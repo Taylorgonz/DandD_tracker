@@ -16,20 +16,13 @@ Campaign.init(
       type: DataTypes.STRING,
       allowNull: false
     },
-    userId: {
+    user_id: {
       type: DataTypes.STRING,
-      references: {
-        model: User,
-        key: 'id'
-      }
+      allowNull: true
     },
-    dmId: {
+    dm_id: {
       type: DataTypes.STRING,
       allowNull: false,
-      references: {
-        model: User,
-        key: 'id'
-      }
     }
   },
   {

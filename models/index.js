@@ -3,12 +3,12 @@ const Character = require('./Character');
 const User = require('./User');
 const UserCampaign = require('./UserCampaign');
 
-Campaign.belongsTo(User, {
-  foreignKey: 'dmId'
-});
-User.hasMany(Campaign, {
-  foreignKey: 'dmId'
-});
+// Campaign.belongsTo(User, {
+  
+// });
+// User.hasMany(Campaign, {
+//   foreignKey: 'dmId'
+// });
 
 Campaign.belongsToMany(User, {
   through: {
@@ -24,17 +24,15 @@ User.belongsToMany(Campaign, {
 });
 
 Character.belongsTo(Campaign, {
-  foreignKey: 'campaignId'
 });
 Campaign.hasMany(Character, {
   foreignKey: 'campaignId'
 });
 
 User.hasMany(Character, {
-  foreignKey: 'userId'
+  foreignKey: 'user_id'
 });
 Character.belongsTo(User, {
-  foreignKey: 'userId'
 });
 
 module.exports = {

@@ -180,7 +180,8 @@ select.classSelector {
     font-size: large;
     margin-bottom: 5px;
 }
-button.character-submit-button {
+button.character-submit-button,
+button.campaign-submit-button {
     width: 70px;
     margin-top: 20px;
     margin-left: auto;
@@ -196,7 +197,8 @@ button.character-submit-button {
     word-wrap: normal;
 }
 
-button.character-submit-button:hover {
+button.character-submit-button:hover,
+button.campaign-submit-button:hover {
 background-color: #fff;
 color: #5b6d53;
 }

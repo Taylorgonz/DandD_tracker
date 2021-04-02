@@ -3,6 +3,7 @@ const { requiresAuth } = require('express-openid-connect');
 const { User, Campaign, Character } = require('../models');
 
 router.get('/', async (req, res) => {
+  
   if (req.oidc.isAuthenticated()) {
     userData = await User.findOne({ where: { email: req.oidc.user.email } })
     if (!userData) {
@@ -20,22 +21,6 @@ router.get('/', async (req, res) => {
   }
 })
 
-router.get('/character-builder', requiresAuth(), async (req, res) => {
-  try {
-    const campaigns = await Campaign.findAll({
-      raw: true
-    })
-
-    const user_id = req.oidc.user.sub;
-    res.render('character-builder', {
-      campaigns,
-      user_id
-    });
-  } catch (err) {
-    res.status(500).json(err);
-  }
-
-})
 
 router.get('/profile', async (req, res) => {
   try {
@@ -55,7 +40,7 @@ router.get('/profile', async (req, res) => {
           attributes: [
             'id',
             'campaign_name',
-            'userId'
+            'user_id'
           ],
           as: 'user_campaigns'
         }
@@ -122,5 +107,34 @@ router.get('/profile', async (req, res) => {
     res.status(500).json(err)
   }
 });
+
+router.get('/character-builder', requiresAuth(), async (req, res) => {
+  try {
+    const campaigns = await Campaign.findAll({
+      raw: true
+    })
+
+    const user_id = req.oidc.user.sub;
+    res.render('character-builder', {
+      campaigns,
+      user_id
+    });
+  } catch (err) {
+    res.status(500).json(err);
+  }
+
+})
+
+router.get('/campaign-builder', requiresAuth(), async (req, res) => {
+  try {
+
+    const user_id = req.oidc.user.sub;
+    res.render('campaign-builder', {
+      user_id
+    });
+  } catch (err) {
+    res.status(500).json(err);
+  }
+})
 
 module.exports = router;

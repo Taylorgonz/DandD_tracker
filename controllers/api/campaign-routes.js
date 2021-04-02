@@ -1,5 +1,6 @@
 const router = require('express').Router()
 const { Campaign, User } = require('../../models')
+const {auth} = require('express-openid-connect')
 
 // Get all campaigns
 router.get('/', (req, res) => {
@@ -33,15 +34,9 @@ router.get('/:id', (req, res) => {
     attributes: [
       'id',
       'campaign_name',
-      'user_id'
+      'user_id',
+      'dm_id'
     ],
-    include: [
-      {
-        model: User,
-        attributes: ['user_name'],
-        as: 'campaign_users'
-      }
-    ]
   })
     .then(campaignData => {
       if (!campaignData) {
@@ -57,9 +52,11 @@ router.get('/:id', (req, res) => {
 
 // Create a new campaign
 router.post('/', (req, res) => {
+  const user_id = req.oidc.user.sub
   Campaign.create({
     campaign_name: req.body.campaign_name,
-    creator_id: req.session.user_id
+    user_id: user_id,
+    dm_id: user_id
   })
     .then(campaignData => res.json(campaignData))
     .catch(err => {

@@ -51,4 +51,6 @@ $('.character-submit-button').click((e) => {
     e.preventDefault();
     
     CreateCharacter();
+    window.location.href='/profile'
+    
 })
