@@ -1,14 +1,13 @@
 const router = require('express').Router();
-const passport = require('passport');
-const userAuth = require('../utils/auth');
 const { User, Campaign, Character } = require('../models');
 const { route } = require('./api/campaign-routes');
 
 router.get('/', (req, res) => {
- res.redirect('/profile')
-})
-router.get('/login', (req, res) => {
-  res.render('login')
+ if (req.oidc.isAuthenticated()) {
+   res.render('profile');
+ } else {
+  res.render('login');
+ }
 })
 
 router.get('/signup', (req, res) => {
@@ -30,14 +29,6 @@ router.get('/character-builder', async (req, res) => {
 
 })
 
-// middleware to check if user is logged in
-const checkUserLoggedIn = (req, res, next) => {
-  req.user ? next() : res.sendStatus(401)
-}
-// router.get('/profile', async (req, res) => {
-//   res.render('profile')
-// });
-// protected route
 router.get('/profile', async (req, res) => {
   try {
     const user = await User.findOne({
@@ -120,21 +111,6 @@ router.get('/profile', async (req, res) => {
   } catch (err) {
     res.status(500).json(err)
   }
-})
-
-
-// auth routes
-router.get('/auth/google', passport.authenticate('google', { scope: ['profile', 'email'] }))
-
-router.get('/auth/google/callback', passport.authenticate('google', { failureRedirect: '/failed' }),
-  function (req, res) {
-    res.redirect('/profile')
-  }
-)
-//
-
-router.get('/signup', (req, res) => {
-  res.render('signup');
-})
+});
 
 module.exports = router;
