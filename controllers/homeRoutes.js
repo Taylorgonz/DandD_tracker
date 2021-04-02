@@ -1,20 +1,18 @@
 const router = require('express').Router();
+const { requiresAuth } = require('express-openid-connect');
 const { User, Campaign, Character } = require('../models');
 const { route } = require('./api/campaign-routes');
 
 router.get('/', (req, res) => {
  if (req.oidc.isAuthenticated()) {
-   res.render('profile');
+   res.redirect('/profile');
  } else {
-  res.render('login');
+  res.render('homepage');
  }
 })
 
-router.get('/signup', (req, res) => {
-  res.render('signup')
-})
 
-router.get('/character-builder', async (req, res) => {
+router.get('/character-builder', requiresAuth(), async (req, res) => {
   try {
     const campaigns = await Campaign.findAll({
       raw: true
@@ -103,10 +101,13 @@ router.get('/profile', async (req, res) => {
       raw: true
     })
 
+    const nickname = req.oidc.user.nickname;
+
     res.render('profile', {
       user,
       campaigns,
-      characters
+      characters,
+      nickname
     })
   } catch (err) {
     res.status(500).json(err)

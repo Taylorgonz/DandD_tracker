@@ -34,17 +34,8 @@ h2.sub-header {
 /* login/signup page styling */
 /* ------------------------------------------------- */
 
-.login-form,
-.signup-form {
-    flex-direction: column;
-    text-align: center;
-    background: rgb(255, 255, 255, 0.8);
-    width: 300px;
-    height: 400px;
-    border-radius: 35px;
-    margin: auto;
-    display: flex;
-
+.login-form {
+    display: block;
 }
 .login-header {
     color: #fff;
@@ -53,40 +44,12 @@ h2.sub-header {
     text-shadow: 3px 3px #5b6d53 ;
     font-size: xx-large;
     margin-bottom: 10px;
-
-}
-
-.login-subheader {
-    margin-top: 0px;
-    margin-bottom: 0px;
-    font-family: Calibri;
-    color: #5b6d53 ;
-    letter-spacing: 3px;
-    font-size: large;
-}
-.username,
-.password {
-    border-radius: 15px;
-    padding: 15px;
-    margin-top: 30px;
-    margin-bottom: 20px;
-    width: 200px;
-    margin-left: auto;
-    margin-right: auto;
-    border: 2px solid #5b6d53 ;
-    text-align: center;
-    
-}
-
-.username::placeholder,
-.password::placeholder {
-    opacity: 50%;
-    font-family: Calibri;
-    font-size: large;
+    display: flex;
+    justify-content: center;
 }
 
 button.login-button {
-    width: 70px;
+    width: 200px;
     margin-top: 20px;
     margin-left: auto;
     margin-right: auto;
@@ -98,7 +61,11 @@ button.login-button {
     border: none;
     border-radius: 5px;
     font-family: Calibri;
+    font-size: xx-large;
     word-wrap: normal;
+    display: flex;
+    justify-content: center;
+    
 }
 
 button.login-button:hover {
