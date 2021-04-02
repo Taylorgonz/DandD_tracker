@@ -1,7 +1,6 @@
 const router = require('express').Router();
 const { requiresAuth } = require('express-openid-connect');
 const { User, Campaign, Character } = require('../models');
-const { route } = require('./api/campaign-routes');
 
 router.get('/', (req, res) => {
  if (req.oidc.isAuthenticated()) {
@@ -18,8 +17,10 @@ router.get('/character-builder', requiresAuth(), async (req, res) => {
       raw: true
     })
 
+    const user_id = req.oidc.user.sub;
     res.render('character-builder', {
-      campaigns
+      campaigns,
+      user_id
     });
   } catch (err) {
     res.status(500).json(err);

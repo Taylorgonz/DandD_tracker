@@ -3,7 +3,7 @@
 </div>
 <div class="character-form">
     <form>
-        <h2 class='charFormHeader'>Character Builder</h2>
+        <h2 class='charFormHeader' id='character-builder-id' value="{{user_id}}">Character Builder</h2>
         <div class="character-name">
             <label for="charName" class="characterLabel">Character Name</label>
             <input type="text" id="charName" class='character-input'>
@@ -65,13 +65,13 @@
             <label for="charItems" class="traitsLabel">Items</label>
             <textarea type="text" id="charItems" rows="4" class='character-input'></textarea>
             <label for="charFlaws" class="traitsLabel">Flaws</label>
-            <textarea type="text" id="charNFlaws" rows="4" class='character-input'></textarea>
+            <textarea type="text" id="charFlaws" rows="4" class='character-input'></textarea>
             <label for="charNotes" class="traitsLabel">Notes</label>
             <textarea type="text" id="charNotes" rows="4" class='character-input'></textarea>
         </div>
         <div>
             <label for="campaignSelector" class="characterLabel">Campaign Selector</label>
-            <select id="classList" name="campaignSelector" class="classSelector">
+            <select id="campaignList" name="campaignSelector" class="classSelector">
                 {{#each campaigns as |campaign| }}
                 <option class='campaign-options' value="{{ campaign.id }}"> {{ campaign.campaign_name }}</option>
                 {{/each}}

@@ -5,21 +5,24 @@ async function CreateCharacter(event) {
     const character_class = $('select#classList')[0].value
     const strength = $('input#charStrength')[0].value
     const dexterity = $('input#charDexterity')[0].value
-    const constitution = $('#constitution')[0].value
-    const intelligence = $('#intelligence')[0].value
-    const wisdom = $('#wisdom')[0].value
-    const charisma = $('#charisma')[0].value
-    const armor = $('#armor')[0].value
-    const speed = $('#speed')[0].value
-    const items = $('#items')[0].value
-    const flaws = $('#flaws')[0].value
-    const traits = $('#traits')[0].value
-    const notes = $('#notes')[0].value
+    const constitution = $('input#charConstitution')[0].value
+    const intelligence = $('input#charIntelligence')[0].value
+    const wisdom = $('input#charWisdom')[0].value
+    const charisma = $('input#charCharisma')[0].value
+    const armor = $('input#charArmor')[0].value
+    const speed = $('input#charSpeed')[0].value
+    const items = $('textarea#charItems')[0].value
+    const flaws = $('textarea#charFlaws')[0].value
+    const traits = $('textarea#charTraits')[0].value
+    const notes = $('textarea#charNotes')[0].value
+    const campaign_id = $('select#campaignList')[0].value
+    const user_id = $('#character-builder-id')[0].attributes[2].value
 
-    await fetch(`api/characters/${id}`, {
+    await fetch(`api/characters`, {
 
-        method: 'PUT',
+        method: 'POST',
         body: JSON.stringify({
+            character_name,
             character_race,
             character_class,
             strength,
@@ -28,10 +31,14 @@ async function CreateCharacter(event) {
             intelligence,
             wisdom,
             charisma,
+            armor,
+            speed,
             items,
             flaws,
             traits,
             notes,
+            campaign_id,
+            user_id
         }),
         headers: {
             'Content-Type': 'application/json',
@@ -42,6 +49,6 @@ async function CreateCharacter(event) {
 
 $('.character-submit-button').click((e) => {
     e.preventDefault();
-    const character_name = $('select#classList')[0].value
-    console.log(character_name)
+    
+    CreateCharacter();
 })
