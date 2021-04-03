@@ -138,7 +138,7 @@ router.post('/', (req, res) => {
     flaws: req.body.flaws,
     notes: req.body.notes,
     campaign_id: req.body.campaign_id,
-    user_id: req.body.user_id
+    user_id: req.oidc.user.sub
   })
     .then(characterData => res.json(characterData))
     .catch(err => {

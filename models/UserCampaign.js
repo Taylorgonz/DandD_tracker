@@ -13,14 +13,14 @@ UserCampaign.init(
       autoIncrement: true,
       primaryKey: true
     },
-    userId: {
+    user_id: {
       type: DataTypes.STRING,
       references: {
         model: User,
         key: 'id'
       }
     },
-    campaignId: {
+    campaign_id: {
       type: DataTypes.INTEGER,
       references: {
         model: Campaign,

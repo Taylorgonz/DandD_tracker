@@ -45,8 +45,8 @@ router.get('/:id', (req, res) => {
                     'items',
                     'flaws',
                     'notes',
-                    'userId',
-                    'campaignId'
+                    'user_id',
+                    'campaign_id'
                 ]
             },
             {
@@ -54,7 +54,7 @@ router.get('/:id', (req, res) => {
                 attributes: [
                     'id', 
                     'campaign_name', 
-                    'userId'
+                    'user_id'
                 ],
                 as: 'user_campaigns'
             }

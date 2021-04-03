@@ -176,6 +176,7 @@ async function editCharacterForm(event) {
 
         method: 'PUT',
         body: JSON.stringify({
+            id,
             character_race,
             character_class,
             strength,
@@ -183,6 +184,8 @@ async function editCharacterForm(event) {
             constitution,
             intelligence,
             wisdom,
+            armor,
+            speed,
             charisma,
             items,
             flaws,

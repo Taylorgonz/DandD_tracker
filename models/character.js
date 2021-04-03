@@ -47,15 +47,18 @@ Character.init(
     },
     hitpoints_current: {
       type: DataTypes.INTEGER,
-      allowNull: true
+      allowNull: true,
+      defaultValue: 0
     },
     hitpoints_temp: {
       type: DataTypes.INTEGER,
-      allowNull: true
+      allowNull: true,
+      defaultValue: 0
     },
     hit_dice: {
       type: DataTypes.INTEGER,
-      allowNull: true
+      allowNull: true,
+      defaultValue: 0
     },
     character_name: {
       type: DataTypes.STRING,
@@ -85,26 +88,13 @@ Character.init(
       type: DataTypes.TEXT,
       allowNull: false
     },
-    userId: {
+    user_id: {
       type: DataTypes.STRING,
-      references: {
-        model: User,
-        key: 'id'
-      }
+      allowNull: false
     },
-    campaignId: {
+    campaign_id: {
       type: DataTypes.INTEGER,
-      references: {
-        model: Campaign,
-        key: 'id'
-      },
-      role: {
-        type: DataTypes.STRING,
-        references: {
-          model: "user",
-          key: "role"
-        }
-      }
+      allowNull: false
     },
   },
   {
