@@ -1,6 +1,6 @@
-const Campaign = require('./Campaign');
-const Character = require('./Character');
-const User = require('./User');
+const Campaign = require('./campaign');
+const Character = require('./character');
+const User = require('./user');
 const UserCampaign = require('./UserCampaign');
 
 // Campaign.belongsTo(User, {
