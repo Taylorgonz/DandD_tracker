@@ -17,7 +17,7 @@ router.get('/', async (req, res) => {
     }
     res.redirect('/profile');
   } else {
-    res.render('Homepage');
+    res.render('homepage');
   }
 })
 
