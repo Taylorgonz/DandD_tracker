@@ -206,7 +206,27 @@ color: #5b6d53;
 /* profile page */
 /* ------------------------------------------------------------- */
 
-
+ #logOutBtn {
+        width: 70px;
+        margin-bottom: 20px;
+        margin-left: auto;
+        margin-right: auto;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        color: #fff;
+        background-color: #5b6d53;
+        text-decoration: none;
+        border: none;
+        border-radius: 5px;
+        font-family: Calibri;
+        word-wrap: normal;
+        display: flex;
+        justify-content: center;
+}
+ #logOutBtn:hover {
+    background-color: #fff;
+    color: #5b6d53;
+ }
 .profile-page {
     text-align: center;
     background: rgb(255, 255, 255, 0.7);

@@ -22,5 +22,5 @@ $('#campaign-submit').click((e) => {
     e.preventDefault();
     
     CreateCampaign();
-    // window.location.href='/profile'
+    window.location.href='/profile'
 });
