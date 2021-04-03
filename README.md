@@ -1,4 +1,6 @@
-# DandD_tracker
+![D&DTracker](./public/images/homescreen.png)
+
+# Dungeons and Dragons Campaign Tracker
 [![GitHub License](https://img.shields.io/badge/License-MIT-blue)](https://opensource.org/licenses/MIT)
 
 ---------------
@@ -27,10 +29,10 @@ Please use a new branch before contributing
 ---------------
 
 ## *Author*
-Taylor Gonzalez
-Hanna Munoz
-Tristan Laroche
-Brendan Francis
+- Taylor Gonzalez
+- Hanna Munoz
+- Tristan Laroche
+- Brendan Francis
 
 ---------------
 
