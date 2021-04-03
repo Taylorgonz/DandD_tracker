@@ -7,31 +7,20 @@ class User extends Model {}
 User.init (
     {
         id: {
-            type: DataTypes.INTEGER,
+            type: DataTypes.STRING,
             allowNull: false,
             primaryKey: true,
-            autoIncrement: true
         },
         user_name: {
             type: DataTypes.STRING,
             allowNull: false
         },
-        password: {
-            type: DataTypes.STRING,
-            allowNull: false
-        },
-        role: {
+        email: {
             type: DataTypes.STRING,
             allowNull: false
         }
     },
     {
-        hooks: {
-            async beforeCreate(newUserData) {
-              newUserData.password = await bcrypt.hash(newUserData.password, 10);
-              return newUserData;
-            },
-          },
         sequelize,
         timestamps: false,
         freezeTableName: true,

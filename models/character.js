@@ -1,6 +1,4 @@
 const { Model, DataTypes } = require('sequelize')
-const User = require('./User')
-const Campaign = require('./Campaign')
 const sequelize = require('../config/connection')
 
 class Character extends Model { }
@@ -47,15 +45,18 @@ Character.init(
     },
     hitpoints_current: {
       type: DataTypes.INTEGER,
-      allowNull: false
+      allowNull: true,
+      defaultValue: 0
     },
     hitpoints_temp: {
       type: DataTypes.INTEGER,
-      allowNull: false
+      allowNull: true,
+      defaultValue: 0
     },
     hit_dice: {
       type: DataTypes.INTEGER,
-      allowNull: false
+      allowNull: true,
+      defaultValue: 0
     },
     character_name: {
       type: DataTypes.STRING,
@@ -85,26 +86,13 @@ Character.init(
       type: DataTypes.TEXT,
       allowNull: false
     },
-    userId: {
-      type: DataTypes.INTEGER,
-      references: {
-        model: User,
-        key: 'id'
-      }
+    user_id: {
+      type: DataTypes.STRING,
+      allowNull: false
     },
-    campaignId: {
+    campaign_id: {
       type: DataTypes.INTEGER,
-      references: {
-        model: Campaign,
-        key: 'id'
-      },
-      role: {
-        type: DataTypes.STRING,
-        references: {
-          model: "user",
-          key: "role"
-        }
-      }
+      allowNull: false
     },
   },
   {

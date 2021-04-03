@@ -3,7 +3,7 @@
 </div>
 <div class="character-form">
     <form>
-        <h2 class='charFormHeader'>Character Builder</h2>
+        <h2 class='charFormHeader' id='character-builder-id' value="{{user_id}}">Character Builder</h2>
         <div class="character-name">
             <label for="charName" class="characterLabel">Character Name</label>
             <input type="text" id="charName" class='character-input'>
@@ -15,7 +15,8 @@
             </div>
             <div class="charBlock">
                 <label for="charClass" class="characterLabel">Class</label>
-                <select id="classList" name="classList" class="classSelector">
+                <select id="classList" name="classList"
+                 class="classSelector">
                 </select>
             </div>
         </div>
@@ -54,8 +55,8 @@
             <input type="number" id="charArmor" class='attribute-input'>
             </div>
             <div class="charBlock">
-            <label for="charArmor" class="attributesLabel">speed</label>
-            <input type="number" id="charArmor" class='attribute-input'>
+            <label for="charSpeed" class="attributesLabel">speed</label>
+            <input type="number" id="charSpeed" class='attribute-input'>
             </div>
         </div>
         <div>
@@ -63,20 +64,21 @@
             <textarea type="text" id="charTraits" rows="4" class='character-input'></textarea>
             <label for="charItems" class="traitsLabel">Items</label>
             <textarea type="text" id="charItems" rows="4" class='character-input'></textarea>
-            <label for="charNotes" class="traitsLabel">Flaws</label>
-            <textarea type="text" id="charNotes" rows="4" class='character-input'></textarea>
+            <label for="charFlaws" class="traitsLabel">Flaws</label>
+            <textarea type="text" id="charFlaws" rows="4" class='character-input'></textarea>
             <label for="charNotes" class="traitsLabel">Notes</label>
             <textarea type="text" id="charNotes" rows="4" class='character-input'></textarea>
         </div>
         <div>
             <label for="campaignSelector" class="characterLabel">Campaign Selector</label>
-            <select id="classList" name="campaignSelector" class="classSelector">
+            <select id="campaignList" name="campaignSelector" class="classSelector">
                 {{#each campaigns as |campaign| }}
                 <option class='campaign-options' value="{{ campaign.id }}"> {{ campaign.campaign_name }}</option>
                 {{/each}}
             </select>
         </div>
-        <button class='character-submit-button'> Submit </button>
+        <button type="button" class='character-submit-button'> Submit </button>
     </form>
 </div>
+<script src='./js/createChar.js'></script>
 

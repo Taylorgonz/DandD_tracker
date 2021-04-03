@@ -1,6 +1,5 @@
 
 classArray = [
-    "Select a class",
     "Barbarian",
     "Bard",
     "Cleric",
@@ -26,7 +25,6 @@ classList();
 
 const campaignBtn = $(".campaign-option-btn");
 const characterInput = $('.character-input')
-console.log(characterInput)
 
 // displays character associated with campaign available
 campaignBtn.on("click", (event) => {
@@ -159,6 +157,9 @@ campaignBtn.on("click", (event) => {
 async function editCharacterForm(event) {
 
     const id = $('#character_name')[0].attributes[1].value
+    const hitpoints_current = $('#hitpoints_current')[0].innerHTML.trim()
+    const hitpoints_temp = $('#hitpoints_temp')[0].innerHTML.trim()
+    const hit_dice = $('#hit_dice')[0].innerHTML.trim()
     const character_race = $('#character_race')[0].innerHTML.trim()
     const character_class = $('#character_class')[0].innerHTML.trim()
     const strength = $('#strength')[0].innerHTML.trim()
@@ -178,13 +179,19 @@ async function editCharacterForm(event) {
 
         method: 'PUT',
         body: JSON.stringify({
+            id,
             character_race,
             character_class,
+            hitpoints_current,
+            hitpoints_temp,
+            hit_dice,
             strength,
             dexterity,
             constitution,
             intelligence,
             wisdom,
+            armor,
+            speed,
             charisma,
             items,
             flaws,

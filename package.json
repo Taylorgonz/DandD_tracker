@@ -7,7 +7,12 @@
     "node": "14.x"
   },
   "scripts": {
+<<<<<<< HEAD
     "start": "node server.js"
+=======
+    "start": "node server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+>>>>>>> ba6155934d128c2bfcd86132a466e4a9bcb68001
   },
   "repository": {
     "type": "git",
@@ -21,20 +26,18 @@
   },
   "homepage": "https://github.com/Taylorgonz/DandD_tracker#readme",
   "dependencies": {
-    "bcrypt": "^5.0.1",
-    "cookie-session": "^1.4.0",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
     "express-handlebars": "^5.2.1",
+    "express-openid-connect": "^2.3.0",
     "jquery": "^3.6.0",
     "mysql2": "^2.2.5",
     "node": "^15.12.0",
-    "passport": "^0.4.1",
-    "passport-google-oauth20": "^2.0.0",
     "sequelize": "^6.6.2",
     "sql": "^0.78.0"
   },
   "devDependencies": {
+    "browser-sync": "^2.26.14",
     "eslint": "^7.22.0",
     "eslint-config-standard": "^16.0.2",
     "eslint-plugin-import": "^2.22.1",
