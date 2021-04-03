@@ -1,7 +1,7 @@
 const { Model, DataTypes } = require('sequelize')
 const sequelize = require('../config/connection')
-const User = require('./User')
-const Campaign = require('./Campaign')
+const User = require('./user')
+const Campaign = require('./campaign')
 
 class UserCampaign extends Model {}
 
