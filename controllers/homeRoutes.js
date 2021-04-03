@@ -22,7 +22,7 @@ router.get('/', async (req, res) => {
 })
 
 
-router.get('/profile', async (req, res) => {
+router.get('/profile', requiresAuth(), async (req, res) => {
   try {
 
     const user_id = req.oidc.user.sub;
